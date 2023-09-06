@@ -1,4 +1,6 @@
+import 'package:collabor8mesh/pages/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
 import '../const/pallete.dart';
@@ -19,13 +21,13 @@ class SignupPage extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.only(top: 20),
                 // color: Colors.red,
-                height: 170,
-                width: 170,
+                height: 170.h,
+                width: 170.w,
                 child: Lottie.network(
                     'https://lottie.host/033f01b5-fd0d-4a14-b8b3-39f374135f0a/IJDyRwd7AY.json'),
               ),
               Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 15),
+                  margin: EdgeInsets.symmetric(horizontal: 14.h),
                   // color: Colors.amber,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,32 +37,32 @@ class SignupPage extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 30, fontWeight: FontWeight.bold),
                       ),
-                      const Text(
+                      Text(
                         'Create your profile to start your journey',
-                        style: TextStyle(fontSize: 15),
+                        style: TextStyle(fontSize: 15.sp),
                       ),
-                      const SizedBox(
-                        height: 30,
+                      SizedBox(
+                        height: 20.h,
                       ),
                       const LoginField(hintText: 'Full Name'),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: 10.h,
                       ),
                       const LoginField(hintText: 'E-mail'),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: 10.h,
                       ),
                       const LoginField(hintText: 'Phone No'),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: 10.h,
                       ),
                       const LoginField(hintText: 'Password'),
-                      const SizedBox(
-                        height: 20,
+                      SizedBox(
+                        height: 20.h,
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            fixedSize: const Size(395, 55),
+                            fixedSize: Size(395.h, 55.w),
                             backgroundColor: Pallete.universecolor),
                         onPressed: () {},
                         child: const Text(
@@ -68,8 +70,8 @@ class SignupPage extends StatelessWidget {
                           style: TextStyle(color: Colors.white, fontSize: 15),
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: 10.h,
                       ),
                       const Center(
                         child: Text(
@@ -77,8 +79,8 @@ class SignupPage extends StatelessWidget {
                           style: TextStyle(color: Colors.black),
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: 10.h,
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
@@ -89,17 +91,20 @@ class SignupPage extends StatelessWidget {
                             fixedSize: const Size(395, 55),
                             backgroundColor: Pallete.whiteColor),
                         onPressed: () {},
-                        child: const Row(
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(
-                              Icons.network_check_rounded,
-                              color: Colors.black,
+                            SizedBox(
+                              height: 40.h,
+                              width: 40.w,
+                              child: Image.network(
+                                  'http://pngimg.com/uploads/google/google_PNG19635.png',
+                                  fit: BoxFit.cover),
                             ),
                             SizedBox(
-                              width: 10,
+                              width: 10.h,
                             ),
-                            Text(
+                            const Text(
                               'Sign in with Google',
                               style:
                                   TextStyle(color: Colors.black, fontSize: 15),
@@ -110,11 +115,19 @@ class SignupPage extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
+                          const Text(
                             "Already have an Account?",
                             style: TextStyle(color: Colors.black),
                           ),
-                          TextButton(onPressed: () {}, child: Text('Login')),
+                          TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const LoginPage(),
+                                    ));
+                              },
+                              child: const Text('Login')),
                         ],
                       ),
                       // const SizedBox(

@@ -1,7 +1,9 @@
 import 'package:collabor8mesh/const/pallete.dart';
 import 'package:collabor8mesh/helper/login_field.dart';
+import 'package:collabor8mesh/pages/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -16,15 +18,15 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-                  margin: const EdgeInsets.only(top: 20),
+                  margin: EdgeInsets.only(top: 20.h),
                   // color: Colors.red,
-                  height: 200,
-                  width: 200,
+                  height: 200.h,
+                  width: 200.w,
                   child: Lottie.network(
                       'https://lottie.host/033f01b5-fd0d-4a14-b8b3-39f374135f0a/IJDyRwd7AY.json'),
                 ),
                 Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 15),
+                  margin: EdgeInsets.symmetric(horizontal: 15),
                   // color: Colors.amber,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,7 +56,7 @@ class LoginPage extends StatelessWidget {
                           )),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            fixedSize: const Size(395, 55),
+                            fixedSize: Size(395, 55),
                             backgroundColor: Pallete.universecolor),
                         onPressed: () {},
                         child: const Text(
@@ -80,20 +82,23 @@ class LoginPage extends StatelessWidget {
                             side: const BorderSide(
                               color: Colors.black,
                             ),
-                            fixedSize: const Size(395, 55),
+                            fixedSize: Size(395, 55),
                             backgroundColor: Pallete.whiteColor),
                         onPressed: () {},
-                        child: const Row(
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(
-                              Icons.network_check_rounded,
-                              color: Colors.black,
-                            ),
                             SizedBox(
+                              height: 40,
+                              width: 40,
+                              child: Image.network(
+                                  'http://pngimg.com/uploads/google/google_PNG19635.png',
+                                  fit: BoxFit.cover),
+                            ),
+                            const SizedBox(
                               width: 10,
                             ),
-                            Text(
+                            const Text(
                               'Sign in with Google',
                               style:
                                   TextStyle(color: Colors.black, fontSize: 15),
@@ -104,11 +109,19 @@ class LoginPage extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
+                          const Text(
                             "Don't have an account?",
                             style: TextStyle(color: Colors.black),
                           ),
-                          TextButton(onPressed: () {}, child: Text('SignUp')),
+                          TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const SignupPage(),
+                                    ));
+                              },
+                              child: const Text('SignUp')),
                         ],
                       ),
                     ],
