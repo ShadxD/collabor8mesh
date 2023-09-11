@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../const/pallete.dart';
 
-class LoginField extends StatelessWidget {
+class Textfield extends StatelessWidget {
   final String hintText;
-  const LoginField({super.key, required this.hintText});
+  const Textfield({super.key, required this.hintText});
 
   @override
   Widget build(BuildContext context) {

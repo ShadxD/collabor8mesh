@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
 import '../const/pallete.dart';
-import '../helper/login_field.dart';
+import '../components/login_field.dart';
 
 class SignupPage extends StatelessWidget {
   const SignupPage({super.key});
@@ -44,19 +44,19 @@ class SignupPage extends StatelessWidget {
                       SizedBox(
                         height: 20.h,
                       ),
-                      const LoginField(hintText: 'Full Name'),
+                      const Textfield(hintText: 'Full Name'),
                       SizedBox(
                         height: 10.h,
                       ),
-                      const LoginField(hintText: 'E-mail'),
+                      const Textfield(hintText: 'E-mail'),
                       SizedBox(
                         height: 10.h,
                       ),
-                      const LoginField(hintText: 'Phone No'),
+                      const Textfield(hintText: 'Phone No'),
                       SizedBox(
                         height: 10.h,
                       ),
-                      const LoginField(hintText: 'Password'),
+                      const Textfield(hintText: 'Password'),
                       SizedBox(
                         height: 20.h,
                       ),

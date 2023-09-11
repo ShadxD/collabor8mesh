@@ -5,10 +5,10 @@ packages:
     dependency: transitive
     description:
       name: archive
-      sha256: "49b1fad315e57ab0bbc15bcbb874e83116a1d78f77ebd500a4af6c9407d6b28e"
+      sha256: e0902a06f0e00414e4e3438a084580161279f137aeb862274710f29ec10cf01e
       url: "https://pub.dev"
     source: hosted
-    version: "3.3.8"
+    version: "3.3.9"
   async:
     dependency: transitive
     description:
@@ -107,6 +107,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  google_nav_bar:
+    dependency: "direct main"
+    description:
+      name: google_nav_bar
+      sha256: "1c8e3882fa66ee7b74c24320668276ca23affbd58f0b14a24c1e5590f4d07ab0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.0.6"
   js:
     dependency: transitive
     description:

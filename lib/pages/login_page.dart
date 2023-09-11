@@ -1,5 +1,6 @@
 import 'package:collabor8mesh/const/pallete.dart';
-import 'package:collabor8mesh/helper/login_field.dart';
+import 'package:collabor8mesh/components/login_field.dart';
+import 'package:collabor8mesh/pages/home_page.dart';
 import 'package:collabor8mesh/pages/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -26,7 +27,7 @@ class LoginPage extends StatelessWidget {
                       'https://lottie.host/033f01b5-fd0d-4a14-b8b3-39f374135f0a/IJDyRwd7AY.json'),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 15),
+                  margin: const EdgeInsets.symmetric(horizontal: 15),
                   // color: Colors.amber,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,11 +44,11 @@ class LoginPage extends StatelessWidget {
                       const SizedBox(
                         height: 30,
                       ),
-                      const LoginField(hintText: 'E-mail'),
+                      const Textfield(hintText: 'E-mail'),
                       const SizedBox(
                         height: 20,
                       ),
-                      const LoginField(hintText: 'Password'),
+                      const Textfield(hintText: 'Password'),
                       TextButton(
                           onPressed: () {},
                           child: const Text(
@@ -56,9 +57,15 @@ class LoginPage extends StatelessWidget {
                           )),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            fixedSize: Size(395, 55),
+                            fixedSize: const Size(395, 55),
                             backgroundColor: Pallete.universecolor),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const HomePage(),
+                              ));
+                        },
                         child: const Text(
                           'Login',
                           style: TextStyle(color: Colors.white, fontSize: 15),
@@ -82,15 +89,15 @@ class LoginPage extends StatelessWidget {
                             side: const BorderSide(
                               color: Colors.black,
                             ),
-                            fixedSize: Size(395, 55),
+                            fixedSize: const Size(395, 55),
                             backgroundColor: Pallete.whiteColor),
                         onPressed: () {},
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SizedBox(
-                              height: 40,
-                              width: 40,
+                              height: 40.h,
+                              width: 40.w,
                               child: Image.network(
                                   'http://pngimg.com/uploads/google/google_PNG19635.png',
                                   fit: BoxFit.cover),
