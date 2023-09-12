@@ -1,11 +1,12 @@
 import 'package:collabor8mesh/const/pallete.dart';
+import 'package:collabor8mesh/models/streams.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../components/streams_tile.dart';
 
 class DashboardPage extends StatelessWidget {
-  const DashboardPage({super.key});
+  DashboardPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -64,9 +65,21 @@ class DashboardPage extends StatelessWidget {
         SizedBox(
           height: 10,
         ),
-        Expanded(child: ListView.builder(itemBuilder: (context, index) {
-          return StreamsTile();
-        }))
+        Expanded(
+            child: ListView.builder(
+                itemCount: 5,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  Streams stream = Streams(
+                      name: 'Medical',
+                      imagepath: 'assets/images/med.png',
+                      description:
+                          'sjhdsuygsgskgsgscdsvcdsjffdjcdsfcysdfcdycgtfdcgdfcdgcgchfdhgcdjfhcfsvdghdfcghsvchsgcfsdkh,cvdfchgfvchfgdfcvhj,cvdhcdvhcdchc vjh  uckhdcjhdcjdgcdhcbds cdjkc dcdchukch dcc cdcicdh ccudhcucjhcudcdcujdhcducdjcdhckdchdjckdgscgdcjdcvsdgcdcvdcj.');
+
+                  return StreamsTile(
+                    stream: stream,
+                  );
+                }))
       ],
     );
   }
