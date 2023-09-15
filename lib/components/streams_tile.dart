@@ -12,33 +12,46 @@ class StreamsTile extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(left: 25),
       width: 280.w,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        color: Colors.grey[200],
+      ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: Image.asset(stream.imagepath)),
           Text(stream.description),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                children: [
-                  Text(stream.name),
-                ],
-              ),
-              Container(
-                padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                    color: Pallete.universecolor,
-                    borderRadius:
-                        BorderRadius.only(topLeft: Radius.circular(12))),
-                child: Icon(
-                  Icons.add,
-                  color: Colors.white,
+          Padding(
+            padding: EdgeInsets.only(left: 25.w),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      stream.name,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 20.sp),
+                    ),
+                  ],
                 ),
-              )
-            ],
+                Container(
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                      color: Pallete.universecolor,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(12),
+                          bottomRight: Radius.circular(12))),
+                  child: Icon(
+                    Icons.add,
+                    color: Colors.white,
+                  ),
+                )
+              ],
+            ),
           )
         ],
       ),
